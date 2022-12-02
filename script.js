@@ -7,8 +7,6 @@ const DOMSelectors = {
   text: document.querySelector("#text"), // queryselectors look for elements based on parameters, being '.' or '#'
   box: document.getElementById("big-black-box"),
   points: document.querySelectorAll(".point"), // querySelectorAll will access multiple elements with the same class, in this case being "point"
-  null: document.getElementById("point"), // if you try to access a class with getElementById, it will result in "null"
-  empty: document.querySelector(".nothing"),
 };
 
 console.log(DOMSelectors.box);
