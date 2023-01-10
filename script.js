@@ -1,7 +1,7 @@
 const DOMSelectors = {
   form: document.querySelector("#form"),
   inputName: document.querySelector("#input-name"),
-  outputContainerName: document.querySelector("#output-containerName"),
+  outputContainerNam: document.querySelector("#output-containerNam"),
 };
 
 function createObject() {
@@ -23,7 +23,7 @@ function injectIntoDOM(object) {
     <p>Name: ${object.name}</p>
   `;
 
-  DOMSelectors.outputContainerName.appendChild(div);
+  DOMSelectors.outputContainerNam.appendChild(div);
 }
 
 function clearFields() {
@@ -31,7 +31,7 @@ function clearFields() {
 }
 
 function removeObject() {
-  DOMSelectors.outputContainerName.lastChild.remove();
+  DOMSelectors.outputContainerNam.lastChild.remove();
 }
 
 DOMSelectors.form.addEventListener("submit", (event) => {
