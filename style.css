@@ -33,13 +33,19 @@ input {
   border-radius: 4px;
   font-size: 16px;
 }
-
+#output-containerDate{
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid rgb(17, 229, 24);
+  border-radius: 4px;
+  font-size: 16px;
+}
 #remove-button {
   margin: 10px 0;
   padding: 10px;
   border: none;
   border-radius: 4px;
-  color: rgb(255, 255, 255);
+  color: rgb(246, 241, 241);
   background-color: #f44336;
   font-size: 16px;
 }

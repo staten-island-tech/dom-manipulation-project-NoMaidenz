@@ -18,11 +18,14 @@ function createObject() {
 
 function injectIntoDOM(object) {
   const div = document.createElement("div");
+  const div1 = document.createElement("div1");
 
   div.innerHTML = `
     <p>Name: ${object.name}</p>
   `;
-
+  div1.innerHTML = `
+   <p>Date: ${object.date}</p>
+  `;
   DOMSelectors.outputContainerNam.appendChild(div);
 }
 
