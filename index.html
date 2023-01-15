@@ -13,15 +13,33 @@
       <div id="output-containerNam">
         <label for="input-name">Name:</label>
         <input type="text" id="input-name" />
+        <button
+          class="remove-button"
+          type="button"
+          id="remove-date-button"
+          onclick="removeObject();"
+        >
+          Remove Date
+        </button>
       </div>
       <div id="output-containerDate">
         <label for="input-date">Date:</label>
         <input type="text" id="input-date" />
+        <button
+          class="remove-button"
+          type="button"
+          id="remove-date-button"
+          onclick="removeObject1();"
+        >
+          Remove Date
+        </button>
       </div>
       <button type="submit">Submit</button>
     </form>
 
-    <button id="remove-button" onclick="removeObject()">Remove</button>
+    <!-- <button id="remove-button" onclick="removeObject(); removeObject1();"> -->
+    <!-- Remove -->
+    <!-- </button> -->
 
     <script src="script.js"></script>
   </body>

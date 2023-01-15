@@ -9,11 +9,11 @@ const DOMSelectors = {
 function createObject() {
   const name = DOMSelectors.inputName.value;
 
-  const newObject = {
+  const Object = {
     name,
   };
 
-  injectIntoDOM(newObject);
+  injectIntoDOM(Object);
 
   ClearFields();
 }
@@ -32,29 +32,34 @@ function ClearFields() {
 }
 
 function removeObject() {
-  DOMSelectors.outputContainerNam.lastChild.remove();
+  if (
+    DOMSelectors.outputContainerNam.childElementCount > 0 &&
+    !DOMSelectors.outputContainerNam.lastChild.classList.contains(
+      "remove-button"
+    )
+  ) {
+    DOMSelectors.outputContainerNam.lastChild.remove();
+  }
 }
 
 /* end of name */
-/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
 function createObject1() {
   const date = DOMSelectors.inputDate.value;
 
-  const oldObject = {
+  const Object1 = {
     date,
   };
 
-  injectIntoDOM(oldObject);
-
+  injectIntoDOM1(Object1);
   ClearFields1();
 }
 
-function injectIntoDOM(object1) {
+function injectIntoDOM1(object1) {
   const div1 = document.createElement("div1");
-
   div1.innerHTML = `
-    <p>Date: ${object1.date}</p>
-  `;
+     <p>Date: ${object1.date}</p>
+   `;
   DOMSelectors.outputContainerDate.appendChild(div1);
 }
 
@@ -63,43 +68,23 @@ function ClearFields1() {
 }
 
 function removeObject1() {
-  DOMSelectors.outputContainerDate.lastChild.remove();
+  if (
+    DOMSelectors.outputContainerDate.childElementCount > 0 &&
+    !DOMSelectors.outputContainerDate.lastChild.classList.contains(
+      "remove-button"
+    )
+  ) {
+    DOMSelectors.outputContainerDate.lastChild.remove();
+  }
 }
-/* Start of date */
-/*
-function createObject1() {
-  const date = DOMSelectors.inputDate.value;
-
-  const OldObject = {
-    date,
-  };
-
-  injectIntoDOM(OldObject);
-
-  clearFields1();
-}
-
-function injectIntoDom(object1) {
-  const div1 = document.createElement("div1");
-  div1.innerHTML = `
-   <p>Date: ${object1.date}</p>
-  `;
-  DOMSelectors.outputContainerDate.appendChild(div1);
-}
-
-function clearFields1() {
-  DOMSelectors.inputDate.value = "";
-}
-
-function removeObject1() {
-  DOMSelectors.outputContainerDate.lastChild.remove();
-}
-*/
-/* end of date */
 
 DOMSelectors.form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   createObject();
+});
+DOMSelectors.form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
   createObject1();
 });
