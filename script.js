@@ -1,90 +1,54 @@
 const DOMSelectors = {
   form: document.querySelector("#form"),
   inputName: document.querySelector("#input-name"),
-  outputContainerNam: document.querySelector("#output-containerNam"),
-  inputDate: document.querySelector("#input-Date"),
-  outputContainerDate: document.querySelector("#output-containerDate"),
+  inputDate: document.querySelector("#input-date"),
+  outputContainer: document.querySelector("#output-container"),
 };
-/* Related to name */
+
 function createObject() {
   const name = DOMSelectors.inputName.value;
+  const date = DOMSelectors.inputDate.value;
 
   const Object = {
     name,
+    date,
   };
 
   injectIntoDOM(Object);
-
   ClearFields();
 }
-
 function injectIntoDOM(object) {
-  const div = document.createElement("div");
+  const container = document.createElement("div");
+  container.classList.add("output-box");
 
+  const div = document.createElement("div");
   div.innerHTML = `
     <p>Name: ${object.name}</p>
+    <p>Date: ${object.date}</p>
   `;
-  DOMSelectors.outputContainerNam.appendChild(div);
+
+  const removeButton = document.createElement("button");
+  removeButton.classList.add("remove-button");
+  removeButton.textContent = "Remove";
+  removeButton.addEventListener("click", () => {
+    container.remove();
+  });
+
+  container.appendChild(div);
+  container.appendChild(removeButton);
+  DOMSelectors.outputContainer.appendChild(container);
 }
 
 function ClearFields() {
   DOMSelectors.inputName.value = "";
-}
-
-function removeObject() {
-  if (
-    DOMSelectors.outputContainerNam.childElementCount > 0 &&
-    !DOMSelectors.outputContainerNam.lastChild.classList.contains(
-      "remove-button"
-    )
-  ) {
-    DOMSelectors.outputContainerNam.lastChild.remove();
-  }
-}
-
-/* end of name */
-
-function createObject1() {
-  const date = DOMSelectors.inputDate.value;
-
-  const Object1 = {
-    date,
-  };
-
-  injectIntoDOM1(Object1);
-  ClearFields1();
-}
-
-function injectIntoDOM1(object1) {
-  const div1 = document.createElement("div1");
-  div1.innerHTML = `
-     <p>Date: ${object1.date}</p>
-   `;
-  DOMSelectors.outputContainerDate.appendChild(div1);
-}
-
-function ClearFields1() {
   DOMSelectors.inputDate.value = "";
 }
 
-function removeObject1() {
-  if (
-    DOMSelectors.outputContainerDate.childElementCount > 0 &&
-    !DOMSelectors.outputContainerDate.lastChild.classList.contains(
-      "remove-button"
-    )
-  ) {
-    DOMSelectors.outputContainerDate.lastChild.remove();
-  }
+function removeObject(button) {
+  button.parentElement.remove();
 }
 
 DOMSelectors.form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   createObject();
-});
-DOMSelectors.form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  createObject1();
 });

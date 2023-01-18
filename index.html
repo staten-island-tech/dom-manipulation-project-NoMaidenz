@@ -4,33 +4,15 @@
     <title>JavaScript Form</title>
   </head>
   <body>
-    <form id="form">
-      <div id="output-containerNam">
-        <label for="input-name">Name:</label>
-        <input type="text" id="input-name" />
-        <button
-          class="remove-button"
-          type="button"
-          id="remove-date-button"
-          onclick="removeObject();"
-        >
-          Remove Date
-        </button>
-      </div>
-      <div id="output-containerDate">
-        <label for="input-date">Date:</label>
-        <input type="text" id="input-date" />
-        <button
-          class="remove-button"
-          type="button"
-          id="remove-date-button"
-          onclick="removeObject1();"
-        >
-          Remove Date
-        </button>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+  <form id="form">
+ 
+    <label for="input-name">Name:</label>
+    <input type="text" id="input-name" />
+    <label for="input-date">Date:</label>
+    <input type="text" id="input-date" />
+    <button type="submit">Submit</button>
+    <div id="output-container"></div>
+
     <script src="script.js"></script>
   </body>
 </html>
